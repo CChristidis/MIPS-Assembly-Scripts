@@ -1,5 +1,5 @@
 # Recursive binary search on string array.
-
+# The string directive to be searched is stored at $a2 after found.
           .globl strcmp, rec_b_search
 
           .data
@@ -26,7 +26,7 @@ main:
             la   $a0, sarray
             la   $a1, endArray
 	    addi $a1, $a1,     -4  # point to the last element of sarray
-            la   $a2, hippo
+            la   $a2, elephant     # string directive to be searched.
             jal  rec_b_search
 
             addiu      $v0, $zero, 10    # system service 10 is exit
@@ -159,6 +159,3 @@ strcmp1:
 			addi $v0, $zero, 0 
 			lw $t4,0($s0)
 			jr $ra
-
-		
-	
